@@ -23,16 +23,17 @@ const onest = Onest({
 })
 
 
-export default function RootLayout({
+export default function StoreLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${onest.className}`}>
-      <body className="min-h-full flex flex-col">
-        <TRPCReactProvider>
-            {children}
-        </TRPCReactProvider>
-      </body>
-    </html>
+          <>
+           <HeaderComponent />
+          <main className="flex-1 py-10">
+            <div className="w-full max-w-7xl mx-auto">
+              {children}
+            </div>
+          </main>
+          </>
   );
 }
