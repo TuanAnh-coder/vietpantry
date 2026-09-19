@@ -2,11 +2,11 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { SidebarProvider, SidebarTrigger } from "~/components/ui/sidebar";
-import { AppSidebar } from "~/app/admin/_components/app-sidebar";
+import { AppSidebar } from "../admin/_components/app-sidebar";
 
 
 export const metadata: Metadata = {
-    title: "VietPantry - Dashboard",
+    title: "VietPantry - Seller Dashboard",
     description: "VietPantry - Nông sản Việt Nam",
     icons: [
         {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     ],
 };
 
-export default function AdminLayout({
+export default function SellerLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (

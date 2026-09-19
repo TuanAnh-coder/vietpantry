@@ -4,7 +4,7 @@ import { type Metadata } from "next";
 import { Onest } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import HeaderComponent from "~/components/layout/header";
+import HeaderComponent from "~/app/(store)/_components/layout/header";
 
 export const metadata: Metadata = {
   title: "VietPantry - Hội tụ tinh hoa đất Việt",

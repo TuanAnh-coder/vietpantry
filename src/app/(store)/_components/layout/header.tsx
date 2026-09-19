@@ -2,11 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Input } from "../ui/input";
+import { Input } from "../../../../components/ui/input";
 import { Heart, Search, ShoppingCart, User2, type LucideIcon } from "lucide-react";
-import { Button } from "../ui/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
-import { Badge } from "../ui/badge";
+import { Button } from "../../../../components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../../../../components/ui/tooltip";
+import { Badge } from "../../../../components/ui/badge";
 import { usePathname } from "next/navigation";
 
 interface UserNavItem {
@@ -30,7 +30,7 @@ const NavItem = [
 const HeaderComponent = () => {
     const pathname = usePathname();
     return (
-        <header className="py-4 shadow-md">
+        <header className="py-2 shadow-md">
             <div className="w-full max-w-7xl mx-auto">
                 {/* Top header */}
                 <div className="flex items-center justify-between">

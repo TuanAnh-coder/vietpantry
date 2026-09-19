@@ -1,10 +1,5 @@
 import "~/styles/globals.css";
-
 import { type Metadata } from "next";
-import { Onest } from "next/font/google";
-
-import { TRPCReactProvider } from "~/trpc/react";
-import HeaderComponent from "~/components/layout/header";
 import AuthTransition from "./_components/auth-transition";
 
 export const metadata: Metadata = {
