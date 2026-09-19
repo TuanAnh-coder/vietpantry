@@ -8,6 +8,7 @@ import {
   uuid,
   varchar,
 } from "drizzle-orm/pg-core";
+import { shop } from "./shop";
 
 export const categories = pgTable("categories", {
   id: uuid("id").primaryKey().defaultRandom(),
@@ -17,6 +18,9 @@ export const categories = pgTable("categories", {
   description: text("description"),
   image: varchar("image", { length: 500 }),
   isActive: boolean("is_active").notNull().default(true),
+  shopId: uuid("shop_id")
+    .notNull()
+    .references(() => shop.id),
   sortOrder: integer("sort_order").notNull().default(0),
   createdAt: timestamp("created_at").notNull().defaultNow(),
   updatedAt: timestamp("updated_at").notNull().defaultNow(),
