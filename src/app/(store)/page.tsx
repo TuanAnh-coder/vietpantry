@@ -1,171 +1,156 @@
-import Image from "next/image";
-import CarouselComponent from "./_components/layout/body/carousel";
+import MorphSlider from "~/components/ui/MorphSlider";
+import CategoriesComponent from "./_components/top-categories";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
-const MOCK_CATEGORIES = [
+const topCategories = [
     {
-        id: "cat-001",
-        name: "Fresh Fruit",
-        slug: "fresh-fruit",
-        image:
-            "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
+        img: "/vegetable.png",
+        title: "Organic Vegetables",
+        description: "More than 20 different types of vegetables"
     },
     {
-        id: "cat-002",
-        name: "Fresh Vegetables",
-        slug: "fresh-vegetables",
-        image:
-            "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=500&q=80",
-        isActive: true,
+        img: "/cate-bee.png",
+        title: "Bee Products",
+        description: "Get the freshest salmon and ocean trout"
+    },
+
+    {
+        img: "/cate-salmon.png",
+        title: "Salmon",
+        description: "Get the freshest salmon and ocean trout"
     },
     {
-        id: "cat-003",
-        name: "Meat & Fish",
-        slug: "meat-fish",
-        image:
-            "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
+        img: "/cate-fruits.png",
+        title: "Fresh Fruits",
+        description: "More than 20 different types of vegetables"
     },
+]
+const items = [
+    { image: 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=1600&auto=format&fit=crop', caption: 'One' },
+    { image: 'https://images.unsplash.com/photo-1781499455083-6ccc3beb20cd?q=80&w=1600&auto=format&fit=crop', caption: 'Two' },
+    { image: 'https://images.unsplash.com/photo-1776394254711-4a0d7345269a?q=80&w=1600&auto=format&fit=crop', caption: 'Three' }
+]
+const collection = [
     {
-        id: "cat-004",
-        name: "Snacks",
-        slug: "snacks",
-        image:
-            "https://images.unsplash.com/photo-1621939514649-280e2aa9f5f3?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-005",
-        name: "Beverages",
-        slug: "beverages",
-        image:
-            "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-006",
-        name: "Beauty & Health",
-        slug: "beauty-health",
-        image:
-            "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-007",
-        name: "Bread & Bakery",
-        slug: "bread-bakery",
-        image:
-            "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-008",
-        name: "Baking Needs",
-        slug: "baking-needs",
-        image:
-            "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-009",
-        name: "Cooking",
-        slug: "cooking",
-        image:
-            "https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-010",
-        name: "Diabetic Food",
-        slug: "diabetic-food",
-        image:
-            "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-011",
-        name: "Dish Detergents",
-        slug: "dish-detergents",
-        image:
-            "https://images.unsplash.com/photo-1585832770485-e68a5dbfad52?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-    {
-        id: "cat-012",
-        name: "Oil",
-        slug: "oil",
-        image:
-            "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=500&q=80",
-        isActive: false,
-    },
-];
-export default function Home() {
+        title: "Vegetable",
+        product: [
+            {
+                title: "Cherry Tomato",
+                price: "8.00"
+            },
+            {
+                title: "Green Lemons",
+                price: "8.00"
+            },
+            {
+                title: "Evocados Lemon",
+                price: "8.00"
+            },
+            {
+                title: "Cherry Tomato",
+                price: "8.00"
+            },
+            {
+                title: "Cherry Tomato",
+                price: "8.00"
+            },
+            {
+                title: "Cherry Tomato",
+                price: "8.00"
+            },
+            {
+                title: "Cherry Tomato",
+                price: "8.00"
+            },
+        ]
+    }
+]
+export default function HomePage() {
     return (
         <>
-            <div className="grid w-full grid-cols-3 gap-1.5">
-                <div className="col-span-2 overflow-hidden">
-                    <CarouselComponent />
-                </div>
-                <div className="grid grid-rows-2 gap-1.5">
-                    <div className="overflow-hidden">
-                        <img
-                            src="/b1.webp"
-                            alt=""
-                            className="block h-full w-full object-cover"
-                        />
-                    </div>
-                    <div className="overflow-hidden">
-                        <img
-                            src="/b2.webp"
-                            alt=""
-                            className="block h-full w-full object-cover"
-                        />
-                    </div>
+            <div className="flex items-stretch justify-between gap-2 w-full max-w-7xl mx-auto">
+                <CategoriesComponent categories={topCategories} />
+                <div className="min-w-0 flex-1">
+                    <MorphSlider
+                        items={items}
+                        transition="melt"
+                        intensity={0.55}
+                        aberration={0.35}
+                        drift={0.4}
+                        autoplay={false}
+                        overlayColor="#05060a"
+                        duration={1.1}
+                        ease="power2.inOut"
+                        scale={2.4}
+                        autoplayDelay={4}
+                        loop
+                        radius={16}
+                        showCaptions
+                        showControls
+                        showIndicators
+                    />
                 </div>
             </div>
-            <div className="py-8 mt-8">
-                <p className="text-center font-light text-sm tracking-wider uppercase text-green-500">Category</p>
-                <h1 className="font-bold text-2xl text-center">All Categories</h1>
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 py-8">
-                    {MOCK_CATEGORIES.map((category) => (
-                        <div
-                            key={category.id}
-                            className={[
-                                "group flex h-[160px] cursor-pointer flex-col",
-                                "items-center justify-between",
-                                "border bg-white p-3",
-                                "transition-all duration-200",
-                                category.isActive
-                                    ? "border-green-600 shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
-                                    : "border-gray-200 hover:border-green-500",
-                            ].join(" ")}
-                        >
-                            {/* Image */}
-                            <div className="flex h-[115px] w-full items-center justify-center">
-                                <Image
-                                    src={category.image}
-                                    alt={category.name}
-                                    width={150}
-                                    height={110}
-                                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                />
-                            </div>
-
-                            {/* Name */}
-                            <span
-                                className={[
-                                    "text-center text-sm font-medium",
-                                    category.isActive
-                                        ? "text-green-700"
-                                        : "text-gray-900",
-                                ].join(" ")}
+            <div className="w-full bg-[url(/b4.webp)] mt-2 bg-cover bg-no-repeat">
+                <div className="max-w-7xl w-full mx-auto py-6">
+                    <h2 className="text-center text-3xl font-bold py-4">Top Offers This Week</h2>
+                    <Tabs defaultValue="vegetable" className="w-full max-w-2xl mx-auto mt-6">
+                        <TabsList className="w-full h-[38px] p-0 rounded-none bg-[#E5F3F2] gap-0 bg-transparent">
+                            <TabsTrigger
+                                value="vegetable"
+                                className="relative flex-1 h-full inline-flex items-center justify-center gap-1.5 rounded-none border-0 border-transparent bg-transparent px-4 py-0.5 whitespace-nowrap text-[18px] font-medium text-[#222222] shadow-none transition-all hover:bg-transparent hover:text-[#01693A] focus:bg-transparent focus-visible:bg-transparent data-active:!bg-transparent data-active:!text-[#01693A] data-active:!shadow-none data-active:after:opacity-0"
                             >
-                                {category.name}
-                            </span>
-                        </div>
-                    ))}
+                                Vegetable
+                            </TabsTrigger>
+
+                            <TabsTrigger
+                                value="fresh-fruits"
+                                className="relative flex-1 h-full inline-flex items-center justify-center gap-1.5 rounded-none border-0 border-transparent bg-transparent px-4 py-0.5 whitespace-nowrap text-[18px] font-medium text-[#222222] shadow-none transition-all hover:bg-transparent hover:text-[#01693A] focus:bg-transparent focus-visible:bg-transparent data-active:!bg-transparent data-active:!text-[#01693A] data-active:!shadow-none data-active:after:opacity-0"
+                            >
+                                Fresh Fruits
+                            </TabsTrigger>
+
+                            <TabsTrigger
+                                value="fruit-juice"
+                                className="relative flex-1 h-full inline-flex items-center justify-center gap-1.5 rounded-none border-0 border-transparent bg-transparent px-4 py-0.5 whitespace-nowrap text-[18px] font-medium text-[#222222] shadow-none transition-all hover:bg-transparent hover:text-[#01693A] focus:bg-transparent focus-visible:bg-transparent data-active:!bg-transparent data-active:!text-[#01693A] data-active:!shadow-none data-active:after:opacity-0"
+                            >
+                                Fruit Juice
+                            </TabsTrigger>
+
+                            <TabsTrigger
+                                value="bee-products"
+                                className="relative flex-1 h-full inline-flex items-center justify-center gap-1.5 rounded-none border-0 border-transparent bg-transparent px-4 py-0.5 whitespace-nowrap text-[18px] font-medium text-[#222222] shadow-none transition-all hover:bg-transparent hover:text-[#01693A] focus:bg-transparent focus-visible:bg-transparent data-active:!bg-transparent data-active:!text-[#01693A] data-active:!shadow-none data-active:after:opacity-0"
+                            >
+                                Bee Products
+                            </TabsTrigger>
+                        </TabsList>
+
+                        <TabsContent value="vegetable" className="mt-6 outline-none">
+                            <div className="grid grid-cols-4 gap-4">
+                                Vegetable products
+                            </div>
+                        </TabsContent>
+
+                        <TabsContent value="fresh-fruits" className="mt-6 outline-none">
+                            <div className="grid grid-cols-4 gap-4">
+                                Fresh fruit products
+                            </div>
+                        </TabsContent>
+
+                        <TabsContent value="fruit-juice" className="mt-6 outline-none">
+                            <div className="grid grid-cols-4 gap-4">
+                                Fruit juice products
+                            </div>
+                        </TabsContent>
+
+                        <TabsContent value="bee-products" className="mt-6 outline-none">
+                            <div className="grid grid-cols-4 gap-4">
+                                Bee products
+                            </div>
+                        </TabsContent>
+                    </Tabs>
                 </div>
             </div>
         </>
-    );
+    )
 }

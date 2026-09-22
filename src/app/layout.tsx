@@ -1,10 +1,9 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Onest } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
-import HeaderComponent from "~/app/(store)/_components/layout/header";
+import { Nunito_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "VietPantry - Hội tụ tinh hoa đất Việt",
@@ -17,10 +16,7 @@ export const metadata: Metadata = {
   ],
 };
 
-const onest = Onest({
-  weight: '500',
-  subsets: ["cyrillic-ext"],
-})
+const onest = Nunito_Sans({})
 
 
 export default function RootLayout({
@@ -30,7 +26,7 @@ export default function RootLayout({
     <html lang="en" className={`${onest.className}`}>
       <body className="min-h-full flex flex-col">
         <TRPCReactProvider>
-            {children}
+          {children}
         </TRPCReactProvider>
       </body>
     </html>
