@@ -1,5 +1,6 @@
 import { type Metadata } from "next";
 import HeaderComponent from "~/app/(store)/_components/header";
+import Footer from "./_components/footer";
 
 export const metadata: Metadata = {
   title: "VietPantry - Hội tụ tinh hoa đất Việt",
@@ -20,9 +21,10 @@ export default function StoreLayout({
   return (
     <>
       <HeaderComponent />
-      <main className="bg-white py-2">
+      <main className="bg-white">
         {children}
       </main>
+      <Footer />
     </>
   );
 }

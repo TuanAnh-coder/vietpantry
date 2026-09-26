@@ -1,6 +1,6 @@
 const Rating = ({ rating = 4 }: { rating?: number }) => {
     return (
-        <div className="flex items-center gap-[2px]">
+        <div className="flex items-center gap-[2px] text-2xl">
             {Array.from({ length: 5 }).map((_, index) => (
                 <span
                     key={index}

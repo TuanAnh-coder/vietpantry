@@ -24,7 +24,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${onest.className}`}>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-white">
         <TRPCReactProvider>
           {children}
         </TRPCReactProvider>

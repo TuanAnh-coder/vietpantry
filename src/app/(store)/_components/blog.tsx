@@ -8,7 +8,7 @@ import {
 
 const news = [
     {
-        image: "/news/news-1.jpg",
+        image: "/quality.webp",
         day: "18",
         month: "NOV",
         category: "Food",
@@ -18,7 +18,7 @@ const news = [
             "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
     },
     {
-        image: "/news/news-2.jpg",
+        image: "/quality.webp",
         day: "29",
         month: "JAN",
         category: "Food",
@@ -28,7 +28,7 @@ const news = [
             "Eget lobortis lorem lacinia. Vivamus pharetra semper.",
     },
     {
-        image: "/news/news-3.jpg",
+        image: "/quality.webp",
         day: "21",
         month: "FEB",
         category: "Food",
@@ -41,11 +41,11 @@ const news = [
 
 const LatestNews = () => {
     return (
-        <section className="w-full bg-white py-8">
+        <section className="w-full bg-white py-8 mt-4">
             <div className="mx-auto w-full max-w-7xl">
                 {/* Heading */}
-                <div className="mb-4 flex justify-center">
-                    <h2 className="text-lg font-semibold tracking-tight text-gray-800">
+                <div className="mb-8 flex justify-center">
+                    <h2 className="text-2xl font-bold tracking-tight">
                         Latest News
                     </h2>
                 </div>
@@ -68,12 +68,12 @@ const LatestNews = () => {
                                 />
 
                                 {/* Date */}
-                                <div className="absolute bottom-2 left-3 flex w-8 flex-col items-center overflow-hidden rounded-[2px] bg-white shadow-md">
-                                    <span className="pt-1 text-[10px] font-semibold leading-none text-gray-800">
+                                <div className="absolute bottom-2 left-3 flex gap-1 px-2 items-center rounded-[2px] bg-white shadow-md">
+                                    <span className="text-xs font-semibold  text-gray-800">
                                         {item.day}
                                     </span>
 
-                                    <span className="pb-1 pt-0.5 text-[6px] font-medium uppercase text-gray-500">
+                                    <span className="text-xs font-medium uppercase text-gray-500">
                                         {item.month}
                                     </span>
                                 </div>
@@ -82,40 +82,40 @@ const LatestNews = () => {
                             {/* Content */}
                             <div className="px-3 py-2.5">
                                 {/* Meta */}
-                                <div className="flex items-center gap-2 text-[7px] text-gray-400">
+                                <div className="flex items-center gap-2 text-xs text-gray-400">
                                     <span className="flex items-center gap-1">
-                                        <CalendarDays className="h-2.5 w-2.5" />
+                                        <CalendarDays className="h-5 w-5" />
                                         {item.category}
                                     </span>
 
                                     <span className="text-gray-200">|</span>
 
                                     <span className="flex items-center gap-1">
-                                        <UserRound className="h-2.5 w-2.5" />
+                                        <UserRound className="h-5 w-5" />
                                         By {item.author}
                                     </span>
 
                                     <span className="text-gray-200">|</span>
 
                                     <span className="flex items-center gap-1">
-                                        <MessageCircle className="h-2.5 w-2.5" />
+                                        <MessageCircle className="h-5 w-5" />
                                         {item.comments} Comments
                                     </span>
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="mt-1.5 line-clamp-2 min-h-[30px] text-[9px] font-medium leading-[1.45] text-gray-800">
+                                <h3 className="mt-4 line-clamp-2 min-h-[30px] text-sm font-semibold leading-[1.45] text-gray-800">
                                     {item.title}
                                 </h3>
 
                                 {/* Read more */}
                                 <button
                                     type="button"
-                                    className="group/read mt-2 flex items-center gap-1 text-[8px] font-semibold text-green-600"
+                                    className="group/read mt-2 flex items-center ml-auto gap-1 text-xs font-semibold text-green-600"
                                 >
                                     Read More
 
-                                    <ArrowRight className="h-2.5 w-2.5 transition-transform duration-200 group-hover/read:translate-x-1" />
+                                    <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover/read:translate-x-1" />
                                 </button>
                             </div>
                         </article>

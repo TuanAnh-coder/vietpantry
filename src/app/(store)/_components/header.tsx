@@ -25,12 +25,12 @@ const navigation: Navagation[] = [
         link: "/"
     },
     {
-        title: "Danh mục",
-        link: "/categories"
+        title: "Giới thiệu",
+        link: "/about"
     },
     {
-        title: "Products",
-        link: "/products"
+        title: "Danh mục",
+        link: "/categories"
     },
     {
         title: "Blogs",
@@ -71,7 +71,10 @@ const HeaderComponent = () => {
                     <NavigationMenuList>
                         {navigation.map((item, index) => (
                             <NavigationMenuItem key={index}>
-                                <NavigationMenuLink className={`font-bold text-sm hover:text-green-500 hover:bg-transparent transition-all duration-700 ease-in-out ${path === item.link ? "text-green-500" : "text-white"}`} render={<Link href={item.link}>{item.title}</Link>} />
+                                <NavigationMenuLink
+                                    className={`font-bold text-sm text-white hover:text-green-500 hover:bg-transparent data-active:!bg-transparent data-active:!text-white focus:!bg-transparent focus-visible:!ring-0 transition-colors duration-300 ${path === item.link ? "text-green-500" : "text-white"}`}
+                                    render={<Link href={item.link}>{item.title}</Link>}
+                                />
                             </NavigationMenuItem>
                         ))}
                     </NavigationMenuList>
@@ -94,7 +97,7 @@ const HeaderComponent = () => {
                                     <NavigationMenuItem key={item.link} className={"text-white"}>
                                         <Tooltip>
                                             <TooltipTrigger>
-                                                <NavigationMenuLink className={"hover:bg-green-500 w-full h-full rounded-full border border-[#01693a] p-3"}
+                                                <NavigationMenuLink className={`hover:bg-green-500 w-full h-full rounded-full border border-[#01693a] p-3`}
                                                     render={
                                                         <Link href={item.link}>
                                                             <Icon className="size-5" />

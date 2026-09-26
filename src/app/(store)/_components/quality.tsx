@@ -5,7 +5,7 @@ import { ArrowRight, CircleCheck } from "lucide-react";
 const QualityComponent = () => {
     return (
         <section className="relative w-full overflow-hidden py-10 lg:py-14">
-            <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full max-w-7xl">
                 <div className="relative flex w-full items-center gap-6 lg:gap-10">
 
                     {/* ================= IMAGE ================= */}

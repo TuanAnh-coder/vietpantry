@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Rating } from "./rating";
-import { LockKeyhole } from "lucide-react";
+import { ShoppingBagIcon } from "lucide-react";
 
 const ProductCard = ({
     product,
@@ -8,10 +8,10 @@ const ProductCard = ({
     product: (typeof products)[number];
 }) => {
     return (
-        <div className="group relative flex min-w-0 flex-col overflow-hidden border-r border-b border-gray-200 bg-white">
+        <div className="cursor-pointer group relative flex min-w-0 flex-col overflow-hidden border border-gray-200 bg-white hover:border-green-700">
             {/* Sale */}
             {product.sale && (
-                <span className="absolute left-2 top-2 z-10 rounded-[2px] bg-red-500 px-1.5 py-0.5 text-[7px] font-medium text-white">
+                <span className="absolute left-2 top-2 z-10 rounded-[2px] bg-red-500 px-1.5 py-0.5 text-xs font-medium text-white">
                     {product.sale}
                 </span>
             )}
@@ -29,12 +29,12 @@ const ProductCard = ({
 
             {/* Product info */}
             <div className="mt-auto px-2 pb-2">
-                <div className="mb-0.5 truncate text-[9px] font-medium text-gray-600">
+                <div className="mb-0.5 truncate text-sm font-medium text-green-700">
                     {product.name}
                 </div>
 
                 <div className="flex items-center gap-1">
-                    <span className="text-[10px] font-semibold text-gray-800">
+                    <span className="text-sm font-bold text-gray-800">
                         {product.price}
                     </span>
 
@@ -56,13 +56,13 @@ const ProductCard = ({
 
                     <button
                         type="button"
-                        className="flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-green-600 hover:text-white"
+                        className="cursor-pointer flex p-2 items-center justify-center rounded-full bg-gray-100 text-gray-500 transition-colors hover:bg-green-600 hover:text-white"
                     >
-                        <LockKeyhole className="h-2.5 w-2.5" />
+                        <ShoppingBagIcon className="h-4 w-4" />
                     </button>
                 </div>
             </div>
         </div>
     );
 };
-export {ProductCard}
+export { ProductCard }

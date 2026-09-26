@@ -32,7 +32,7 @@ const ProductList = ({ collection }: { collection: any[] }) => {
                     <TabsTrigger
                         key={item.title}
                         value={item.title}
-                        className="relative flex-1 h-full inline-flex items-center justify-center gap-1.5 rounded-none border-0 bg-transparent px-4 py-0.5 whitespace-nowrap text-[18px] font-medium text-[#222222] shadow-none transition-all cursor-pointer hover:bg-transparent hover:text-[#01693A] focus:bg-transparent focus-visible:bg-transparent data-active:!bg-transparent data-active:!text-[#01693A] data-active:!shadow-none"
+                        className="relative flex-1 h-full inline-flex items-center justify-center gap-1.5 rounded-none border-0 bg-transparent px-4 py-0.5 whitespace-nowrap text-lg font-medium text-[#222222] shadow-none transition-all cursor-pointer hover:bg-transparent hover:text-[#01693A] focus:bg-transparent focus-visible:bg-transparent data-active:!bg-transparent data-active:!text-[#01693A] data-active:!shadow-none"
                     >
                         <p>{item.title}</p>
 
